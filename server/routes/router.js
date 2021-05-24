@@ -1,0 +1,22 @@
+const express = require("express");
+const app = express();
+const router = express.Router();
+const controller = require("../controller/controller");
+let upload = require("../middleware/react-hook-form");
+let uploadImg = require("../middleware/upload");
+router.use("/api/cookie",controller.testCookie);
+router.use("/api/login",upload.array(),controller.login);
+router.use("/api/logOut",controller.logOut);
+router.use("/api/news",controller.getNews);
+router.use("/api/addNews",uploadImg.single("picture"),controller.insertNews);
+router.use("/api/deleteNews",upload.array(),controller.deleteNews);
+router.use("/api/select",upload.array(), controller.select);
+router.use("/api/uppdate",upload.array(), controller.update);
+router.use("/api/article",controller.getArticles);
+// router.use("/api/aside",controller.getAside);
+router.use("/api/later",controller.getLater);
+app.use(function (err, req, res) {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
+module.exports = router;
