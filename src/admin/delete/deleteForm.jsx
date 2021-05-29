@@ -6,7 +6,7 @@ const DeleteForm = () => {
     const options = [
         { label: "Новина", value: "correspondence" },
         { label: "Стаття", value: "articles" },
-        { label: "Колонка", value: "aside" },
+        { label: "Завдання", value: "aside" },
     ]
     const [option, setOption] = useState(options[0].value)
     const { register, handleSubmit,control } = useForm([]);

@@ -84,13 +84,12 @@ exports.getNews = (req, res) => {
     })
 }
 //getLaterNews
-exports.getLater = (req,res)=>{
-    db.connection.query("SELECT * FROM correspondence WHERE date <= NOW() - INTERVAL 1 DAY ORDER BY date DESC",(err,result)=>{
+exports.getLater = (req, res) => {
+    db.connection.query("SELECT * FROM correspondence WHERE date <= NOW() - INTERVAL 1 DAY ORDER BY date DESC", (err, result) => {
         if (err) res.status(500).json({
             message: "Помилка"
         })
-        else
-        {
+        else {
             res.send(result);
         }
     })
@@ -206,14 +205,21 @@ exports.deleteNews = (req, res) => {
 //Select In MainPage
 exports.select = (req, res) => {
     const select = req.body.select;
-    db.connection.query(`SELECT * FROM correspondence WHERE title = '${select}' OR content = '${select}'`, (err, result) => {
-        if (err) res.status(500).json({
-            message: "Помилка"
+    if (select.length === 0) {
+        res.status(500).json({
+            message: 'Пусті дані'
         })
-        else {
-            res.status(200).send(result);
-        }
-    })
+    }
+    else {
+        db.connection.query(`SELECT * FROM correspondence WHERE title LIKE '%${select}%'`, (err, result) => {
+            if (err) res.status(500).json({
+                message: "Помилка"
+            })
+            else {
+                res.status(200).send(result);
+            }
+        })
+    }
 }
 //Update In AdminPage
 exports.update = (req, res) => {

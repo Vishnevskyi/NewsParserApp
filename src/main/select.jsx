@@ -1,5 +1,5 @@
 import { Button, TextField } from "@material-ui/core"
-import { useState } from "react";
+import {useState } from "react";
 import { useForm } from "react-hook-form"
 
 const Select = () => {
@@ -21,6 +21,7 @@ const Select = () => {
             .then((res) => setMessage(res))
             .catch((err) => setMessage(err))
     }
+    console.log(message.message);
     return (
         <div style={{marginBottom: "1em"}}>
             <form onSubmit={handleSubmit(onSubmit)} style={{ textAlign: "center" }}>
@@ -38,7 +39,7 @@ const Select = () => {
                         value={select}
                     />
                 </div>
-                {message[0] === undefined ? <div></div> : <div><a href={`/read/${message[0].id}`}>{message[0].title}</a></div>}
+                {message.length === 0 ? '' : message.message === 'Пусті дані' ? <h3>0 - результатів пошуку</h3> : <div><h3>{message.length} результатів пошуку</h3>{message.map((res)=>(<a href={`/read/${res.id}`}>{res.title}<br/></a>))}</div>}
                 <Button
                     type="submit"
                     color="secondary"

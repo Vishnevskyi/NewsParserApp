@@ -13,6 +13,7 @@ router.use("/api/deleteNews",upload.array(),controller.deleteNews);
 router.use("/api/select",upload.array(), controller.select);
 router.use("/api/uppdate",upload.array(), controller.update);
 router.use("/api/article",controller.getArticles);
+router.use("/api/aside",controller.getAside);
 // router.use("/api/aside",controller.getAside);
 router.use("/api/later",controller.getLater);
 app.use(function (err, req, res) {

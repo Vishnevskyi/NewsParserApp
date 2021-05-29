@@ -5,7 +5,7 @@ import Error from "../Page404/Page404"
 const useStyle = makeStyles((theme) => ({
     content: {
         position: "relative",
-        marginTop: "6em",
+        marginTop: "2em",
         marginRight: "40em",
         marginLeft: "40em",
         border: "1px solid whitesmoke",
@@ -26,7 +26,25 @@ const useStyle = makeStyles((theme) => ({
     image: {
         marginBottom: "1em",
         maxWidth: "100%",
-    }
+    },
+    title:{
+        position: "relative",
+        marginTop: "6em",
+        marginRight: "40em",
+        marginLeft: "40em",
+        [theme.breakpoints.down("md")]: {
+            marginRight: "20em",
+            marginLeft: "20em",
+        },
+        [theme.breakpoints.down("sm")]: {
+            marginRight: "10em",
+            marginLeft: "10em",
+        },
+        [theme.breakpoints.down("xs")]: {
+            marginRight: "2em",
+            marginLeft: "2em",
+        },
+    },
 }));
 const Correspondence = (props) => {
     const classes = useStyle();
@@ -53,6 +71,7 @@ const Correspondence = (props) => {
         return (
             <div>
                 <Header />
+                <div className={classes.title}><h1>{news.title}</h1></div>
                 <div className={classes.content} key={news.id}>
                     {news.image.includes("http") ? <img className={classes.image} src={news.image} alt={news.title} />: <img className={classes.image} src={`/img/${news.image}`} alt={news.title} />}
                     <div style={{ marginBottom: "3em" }}>{news.content}<div />

@@ -56,7 +56,7 @@ let getDataArticle = async(html) => {
     let blocks = $("article");
     blocks.each(async (i, val) => {
         let content = await getArticleContent(($(val).find('h3').find('a').attr("href")));
-        db.connection.query(`SELECT * FROM articles WHERE title = '${$(val).find('h3').text()}'`,(err,result)=>{
+        db.connection.query(`SELECT * FROM articles WHERE title = '${$(val).find('h3').text().replace(/`/g,'').replace(/"/g,'').replace(/'/g,"")}'`,(err,result)=>{
             if (err)
             {
                 console.log("Помилка");
@@ -67,10 +67,10 @@ let getDataArticle = async(html) => {
             }
             else
             {
-                db.connection.query(`INSERT INTO articles (title,date,href,image,content,author) VALUES ('${$(val).find('h3').text().replace(/`/g,'').replace(/"/g,'').replace(/'/g,"")}','${new Date().toISOString().slice(0, 10)}','${$(val).find('h3').find('a').attr("href")}','${$(val).find('.avatar-img').find('img').attr('src')}','${content.trim().replace(/`/g,'').replace(/"/g,'').replace(/'/g,'')}','${$(val).find('.author').find('a').text()}')`, (err, res) => {
-                    if (err) console.log(err);
+                db.connection.query(`INSERT INTO articles (title,date,href,image,content,author) VALUES ('${$(val).find('h3').text().replace(/`/g,'').replace(/"/g,'').replace(/'/g,"")}','${new Date().toISOString().slice(0, 10)}','${$(val).find('h3').find('a').attr("href")}','${$(val).find('.avatar-img').find('img').attr('src')}','${content.trim().replace(/`/g,'').replace(/"/g,'').replace(/'/g,'')}','${$(val).find('.author').find('a').text()}')`, async(err, res) => {
+                    if (err) await console.log(err);
                     else {
-                        console.log("Статтю було добавлено");
+                        await console.log("Статтю було добавлено");
                     }
                 })
             }
@@ -100,7 +100,7 @@ let getArticle = async() => {
             console.log(err);
         })
 }
-let job = new CronJob('* * * * *', async() => {
+let job = new CronJob('*/1 * * * *', async() => {
     await start();
     await getArticle();
 }, null, true, 'America/Los_Angeles');

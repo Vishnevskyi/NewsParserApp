@@ -5,7 +5,7 @@ import Error from "../Page404/Page404"
 const useStyle = makeStyles((theme) => ({
     content: {
         position: "relative",
-        marginTop: "6em",
+        marginTop: "2em",
         marginRight: "40em",
         marginLeft: "40em",
         border: "1px solid whitesmoke",

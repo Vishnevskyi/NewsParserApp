@@ -2,6 +2,7 @@ import Update from './update/uppdateForm'
 import { useEffect, useState } from "react"
 import {BrowserRouter, Redirect, Route } from "react-router-dom"
 import SignIn from "../login/login-page/login-page"
+import Task from './task/task'
 const { Paper, Accordion, AccordionSummary, Typography, AccordionDetails } = require("@material-ui/core")
 const { default: AddForm } = require("./add/addForm")
 const { default: DeleteForm } = require("./delete/deleteForm")
@@ -53,6 +54,14 @@ const Admin = () => {
                 </AccordionSummary>
                 <AccordionDetails>
                     <Update/>
+                </AccordionDetails>
+            </Accordion>
+            <Accordion>
+                <AccordionSummary>
+                    <Typography>Завдання</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Task/>
                 </AccordionDetails>
             </Accordion>
         </Paper>
