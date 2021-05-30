@@ -9,7 +9,7 @@ const { default: DeleteForm } = require("./delete/deleteForm")
 const Admin = () => {
     const [status,setStatus] = useState({status: "Autorize"});
     useEffect(()=>{
-        fetch("http://localhost:4000/api/cookie",{
+        fetch("damp-tundra-84467.herokuapp.com/cookie",{
             method: "POST",
             mode: "cors",
             body: document.cookie,
@@ -31,7 +31,7 @@ const Admin = () => {
     {
     return (
         <Paper>
-            <a  href="http://localhost:4000/api/logOut">LogOut</a>
+            <a  href="damp-tundra-84467.herokuapp.com/logOut">LogOut</a>
             <Accordion>
                 <AccordionSummary>
                     <Typography>Добавити новину</Typography>
