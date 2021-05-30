@@ -28,7 +28,7 @@ const DeleteForm = () => {
         }
         //--------------------------------
         //Отправка формы в бд на выборку
-        fetch("http://localhost:4000/api/deleteNews", {
+        fetch("https://murmuring-forest-06470.com/api/deleteNews", {
             method: "POST",
             mode: "cors",
             body: formData,

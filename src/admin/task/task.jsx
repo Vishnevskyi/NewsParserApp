@@ -3,7 +3,7 @@ const { useState, useEffect } = require("react")
 const Task = () =>{
     const [task,setTask] = useState([]);
     useEffect(()=>{
-        fetch("http://localhost:4000/api/aside",{
+        fetch("https://murmuring-forest-06470.com/api/aside",{
             method: "POST",
             mode: "cors"
         }).then(res => res.json())
