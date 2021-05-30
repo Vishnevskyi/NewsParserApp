@@ -30,7 +30,7 @@ const UpdateForm = () => {
         }
         //--------------------------------
         //Отправка формы в бд на выборку
-        fetch("https://obscure-taiga-00490.herokuapp.com:4123/api/uppdate", {
+        fetch("https://gentle-refuge-28661.herokuapp.com:4123/api/uppdate", {
             method: "POST",
             mode: "cors",
             body: formData,

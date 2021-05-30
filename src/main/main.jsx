@@ -59,7 +59,6 @@ const useStyle = makeStyles((theme) => ({
     },
 }));
 const Main = () => {
-    debugger;
     const classes = useStyle();
     const [news, setNews] = useState([]);
     let options = {
@@ -68,7 +67,7 @@ const Main = () => {
         weekday: 'long',
     };
     useEffect(() => {
-        fetch("https://obscure-taiga-00490.herokuapp.com:4123/api/news", {
+        fetch("https://gentle-refuge-28661.herokuapp.com:4123/api/news", {
             method: "POST",
             mode: "cors"
         })
@@ -81,7 +80,7 @@ const Main = () => {
     }, [])
     const [article, setArticle] = useState([]);
     useEffect(() => {
-        fetch("https://obscure-taiga-00490.herokuapp.com:4123/api/article", {
+        fetch("https://gentle-refuge-28661.herokuapp.com:4123/api/article", {
             method: "POST",
             mode: "cors"
         })
@@ -91,7 +90,7 @@ const Main = () => {
     }, [])
     const [later, setLater] = useState([]);
     useEffect(() => {
-        fetch("https://obscure-taiga-00490.herokuapp.com:4123/api/later", {
+        fetch("https://gentle-refuge-28661.herokuapp.com:4123/api/later", {
             method: "POST",
             mode: "cors"
         })
