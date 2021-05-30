@@ -68,7 +68,7 @@ const Main = () => {
         weekday: 'long',
     };
     useEffect(() => {
-        fetch("https://obscure-taiga-00490.herokuapp.com:4123/news", {
+        fetch("https://obscure-taiga-00490.herokuapp.com:4123/api/news", {
             method: "POST",
             mode: "cors"
         })
@@ -81,7 +81,7 @@ const Main = () => {
     }, [])
     const [article, setArticle] = useState([]);
     useEffect(() => {
-        fetch("https://obscure-taiga-00490.herokuapp.com:4123/article", {
+        fetch("https://obscure-taiga-00490.herokuapp.com:4123/api/article", {
             method: "POST",
             mode: "cors"
         })
@@ -91,7 +91,7 @@ const Main = () => {
     }, [])
     const [later, setLater] = useState([]);
     useEffect(() => {
-        fetch("https://obscure-taiga-00490.herokuapp.com:4123/later", {
+        fetch("https://obscure-taiga-00490.herokuapp.com:4123/api/later", {
             method: "POST",
             mode: "cors"
         })

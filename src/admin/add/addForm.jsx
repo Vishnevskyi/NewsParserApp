@@ -57,7 +57,7 @@ const AddForm = () => {
         }
         //--------------------------------
         //Отправка формы в бд на выборку
-        fetch("https://obscure-taiga-00490.herokuapp.com:4123/addNews", {
+        fetch("https://obscure-taiga-00490.herokuapp.com:4123/api/addNews", {
             method: "POST",
             mode: "cors",
             body: formData,

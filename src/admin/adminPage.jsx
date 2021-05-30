@@ -31,7 +31,7 @@ const Admin = () => {
     {
     return (
         <Paper>
-            <a  href="https://obscure-taiga-00490.herokuapp.com:4123/logOut">LogOut</a>
+            <a  href="https://obscure-taiga-00490.herokuapp.com:4123/api/logOut">LogOut</a>
             <Accordion>
                 <AccordionSummary>
                     <Typography>Добавити новину</Typography>
