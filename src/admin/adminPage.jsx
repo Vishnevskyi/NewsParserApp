@@ -9,7 +9,7 @@ const { default: DeleteForm } = require("./delete/deleteForm")
 const Admin = () => {
     const [status,setStatus] = useState({status: "Autorize"});
     useEffect(()=>{
-        fetch("http://obscure-taiga-00490.herokuapp.com:4000/api/cookie",{
+        fetch("https://obscure-taiga-00490.herokuapp.com:4000/api/cookie",{
             method: "POST",
             mode: "cors",
             body: document.cookie,
@@ -31,7 +31,7 @@ const Admin = () => {
     {
     return (
         <Paper>
-            <a  href="http://obscure-taiga-00490.herokuapp.com:4000/api/logOut">LogOut</a>
+            <a  href="https://obscure-taiga-00490.herokuapp.com:4000/api/logOut">LogOut</a>
             <Accordion>
                 <AccordionSummary>
                     <Typography>Добавити новину</Typography>

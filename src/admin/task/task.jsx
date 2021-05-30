@@ -3,7 +3,7 @@ const { useState, useEffect } = require("react")
 const Task = () =>{
     const [task,setTask] = useState([]);
     useEffect(()=>{
-        fetch("http://obscure-taiga-00490.herokuapp.com:4000/api/aside",{
+        fetch("https://obscure-taiga-00490.herokuapp.com:4000/api/aside",{
             method: "POST",
             mode: "cors"
         }).then(res => res.json())

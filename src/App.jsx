@@ -10,7 +10,7 @@ import aboutPage from "./about/about"
 function App() {
     const [article, setArticle] = useState([]);
     useEffect(() => {
-        fetch("http://obscure-taiga-00490.herokuapp.com:4000/api/article", {
+        fetch("https://obscure-taiga-00490.herokuapp.com:4000/api/article", {
             method: "POST",
             mode: "cors"
         })
@@ -20,7 +20,7 @@ function App() {
     }, [])
     const [news, setNews] = useState([]);
     useEffect(() => {
-        fetch("http://obscure-taiga-00490.herokuapp.com:4000/api/news", {
+        fetch("https://obscure-taiga-00490.herokuapp.com:4000/api/news", {
             method: "POST",
             mode: "cors"
         })
