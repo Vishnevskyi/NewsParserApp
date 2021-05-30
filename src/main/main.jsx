@@ -68,7 +68,7 @@ const Main = () => {
         weekday: 'long',
     };
     useEffect(async() => {
-        await fetch("https://murmuring-forest-06470.herokuapp.com/api/news", {
+        await fetch("https://murmuring-forest-06470.herokuapp.com:37954/api/news", {
             method: "POST",
             mode: "cors"
         })
@@ -78,7 +78,7 @@ const Main = () => {
     }, [])
     const [article, setArticle] = useState([]);
     useEffect(async() => {
-       await fetch("https://murmuring-forest-06470.herokuapp.com/api/article", {
+       await fetch("https://murmuring-forest-06470.herokuapp.com:37954/api/article", {
             method: "POST",
             mode: "cors"
         })
@@ -88,7 +88,7 @@ const Main = () => {
     }, [])
     const [later, setLater] = useState([]);
     useEffect(async() => {
-       await fetch("https://murmuring-forest-06470.herokuapp.com/api/later", {
+       await fetch("https://murmuring-forest-06470.herokuapp.com:37954/api/later", {
             method: "POST",
             mode: "cors"
         })
