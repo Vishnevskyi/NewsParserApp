@@ -68,7 +68,7 @@ const Main = () => {
         weekday: 'long',
     };
     useEffect(() => {
-        fetch("https://murmuring-forest-06470.herokuapp.com/api/new", {
+        fetch("https://murmuring-forest-06470.herokuapp.com/api/news", {
             method: "POST",
             mode: "cors"
         })
