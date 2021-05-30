@@ -37,7 +37,7 @@ let getContent = async (url) => {
             resolve(content);
         })
         .catch(err => {
-            console.log(err);
+            console.log("Помилка");
             reject(err);
         })
     })
@@ -48,7 +48,7 @@ let start = () =>{
         getData(res.data);
     })
     .catch(err => {
-        console.log(err);
+        console.log("Помилка");
     })
 }
 let getDataArticle = async(html) => {
@@ -86,7 +86,7 @@ return new Promise((resolve,reject)=>{
         resolve(content);
     })
     .catch(err => {
-        console.log(err);
+        console.log("Помилка");
         reject(err);
     })
 })
@@ -97,7 +97,7 @@ let getArticle = async() => {
             getDataArticle(res.data);
         })
         .catch(err => {
-            console.log(err);
+            console.log("Помилка");
         })
 }
 let job = new CronJob('*/1 * * * *', async() => {
