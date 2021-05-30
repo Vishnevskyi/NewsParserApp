@@ -21,7 +21,6 @@ const Select = () => {
             .then((res) => setMessage(res))
             .catch((err) => setMessage(err))
     }
-    console.log(message.message);
     return (
         <div style={{marginBottom: "1em"}}>
             <form onSubmit={handleSubmit(onSubmit)} style={{ textAlign: "center" }}>
