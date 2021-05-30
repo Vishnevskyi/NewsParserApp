@@ -4,7 +4,7 @@ const router = express.Router();
 const controller = require("../controller/controller");
 let upload = require("../middleware/react-hook-form");
 let uploadImg = require("../middleware/upload");
-router.use("https://obscure-taiga-00490.herokuapp.com/cookie",controller.testCookie);
+router.use("https://obscure-taiga-00490.herokuapp.com:4123/cookie",controller.testCookie);
 router.use("https://obscure-taiga-00490.herokuapp.com/login",upload.array(),controller.login);
 router.use("https://obscure-taiga-00490.herokuapp.com/logOut",controller.logOut);
 router.use("https://obscure-taiga-00490.herokuapp.com/news",controller.getNews);
