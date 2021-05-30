@@ -68,7 +68,7 @@ const Main = () => {
         weekday: 'long',
     };
     useEffect(() => {
-        fetch("https://murmuring-forest-06470.com/api/news", {
+        fetch("http://obscure-taiga-00490.herokuapp.com:4000/api/news", {
             method: "POST",
             mode: "cors"
         })
@@ -78,7 +78,7 @@ const Main = () => {
     }, [])
     const [article, setArticle] = useState([]);
     useEffect(() => {
-        fetch("https://murmuring-forest-06470.com/api/article", {
+        fetch("http://obscure-taiga-00490.herokuapp.com:4000/api/article", {
             method: "POST",
             mode: "cors"
         })
@@ -88,7 +88,7 @@ const Main = () => {
     }, [])
     const [later, setLater] = useState([]);
     useEffect(() => {
-        fetch("https://murmuring-forest-06470.com/api/later", {
+        fetch("http://obscure-taiga-00490.herokuapp.com:4000/api/later", {
             method: "POST",
             mode: "cors"
         })
