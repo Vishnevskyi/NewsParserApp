@@ -10,7 +10,7 @@ import aboutPage from "./about/about"
 function App() {
     const [article, setArticle] = useState([]);
     useEffect(() => {
-        fetch("https://murmuring-forest-06470.herokuapp.com/api:37954/article", {
+        fetch("https://murmuring-forest-06470.herokuapp.com/api:4000/article", {
             method: "POST",
             mode: "cors"
         })
@@ -20,7 +20,7 @@ function App() {
     }, [])
     const [news, setNews] = useState([]);
     useEffect(() => {
-        fetch("https://murmuring-forest-06470.herokuapp.com:37954/api/news", {
+        fetch("https://murmuring-forest-06470.herokuapp.com:4000/api/news", {
             method: "POST",
             mode: "cors"
         })
