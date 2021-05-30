@@ -9,7 +9,7 @@ const { default: DeleteForm } = require("./delete/deleteForm")
 const Admin = () => {
     const [status,setStatus] = useState({status: "Autorize"});
     useEffect(()=>{
-        fetch("damp-tundra-84467.herokuapp.com/cookie",{
+        fetch("https://murmuring-forest-06470.com/cookie",{
             method: "POST",
             mode: "cors",
             body: document.cookie,
