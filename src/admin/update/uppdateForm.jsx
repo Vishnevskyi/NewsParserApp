@@ -30,7 +30,7 @@ const UpdateForm = () => {
         }
         //--------------------------------
         //Отправка формы в бд на выборку
-        fetch("https://murmuring-forest-06470.com/api/uppdate", {
+        fetch("https://murmuring-forest-06470.herokuapp.com:4000/api/uppdate", {
             method: "POST",
             mode: "cors",
             body: formData,
