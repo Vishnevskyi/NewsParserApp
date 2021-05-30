@@ -10,7 +10,7 @@ import aboutPage from "./about/about"
 function App() {
     const [article, setArticle] = useState([]);
     useEffect(() => {
-        fetch("https://murmuring-forest-06470.herokuapp.com/api:4000/article", {
+        fetch("https://murmuring-forest-06470.herokuapp.com:4000/api/article", {
             method: "POST",
             mode: "cors"
         })
