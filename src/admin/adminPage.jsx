@@ -31,7 +31,7 @@ const Admin = () => {
     {
     return (
         <Paper>
-            <a  href="damp-tundra-84467.herokuapp.com/logOut">LogOut</a>
+            <a  href="https://murmuring-forest-06470.herokuapp.com:4000/api/logOut">LogOut</a>
             <Accordion>
                 <AccordionSummary>
                     <Typography>Добавити новину</Typography>
