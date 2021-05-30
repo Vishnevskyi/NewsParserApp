@@ -10,7 +10,7 @@ import aboutPage from "./about/about"
 function App() {
     const [article, setArticle] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:4000/api/article", {
+        fetch("damp-tundra-84467.herokuapp.com/api/article", {
             method: "POST",
             mode: "cors"
         })
@@ -20,7 +20,7 @@ function App() {
     }, [])
     const [news, setNews] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:4000/api/news", {
+        fetch("damp-tundra-84467.herokuapp.com/api/news", {
             method: "POST",
             mode: "cors"
         })

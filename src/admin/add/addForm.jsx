@@ -57,7 +57,7 @@ const AddForm = () => {
         }
         //--------------------------------
         //Отправка формы в бд на выборку
-        fetch("http://localhost:4000/api/addNews", {
+        fetch("damp-tundra-84467.herokuapp.com/api/addNews", {
             method: "POST",
             mode: "cors",
             body: formData,
