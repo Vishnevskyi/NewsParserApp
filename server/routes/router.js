@@ -7,7 +7,7 @@ let uploadImg = require("../middleware/upload");
 router.use("/api/cookie",controller.testCookie);
 router.use("/api/login",upload.array(),controller.login);
 router.use("/api/logOut",controller.logOut);
-router.use("https://obscure-taiga-00490.herokuapp.com:4123/api/news",controller.getNews);
+router.use("/api/news",controller.getNews);
 router.use("/api/addNews",uploadImg.single("picture"),controller.insertNews);
 router.use("/api/deleteNews",upload.array(),controller.deleteNews);
 router.use("/api/select",upload.array(), controller.select);

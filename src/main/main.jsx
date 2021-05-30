@@ -73,7 +73,10 @@ const Main = () => {
             mode: "cors"
         })
             .then((res) => res.json())
-            .then((res) => setNews(res))
+            .then((res) => {
+                setNews(res);
+                console.log(res);
+            })
             .catch((err) => setNews(err))
     }, [])
     const [article, setArticle] = useState([]);
@@ -96,6 +99,7 @@ const Main = () => {
             .then((res) => setLater(res))
             .catch((err) => setLater(err))
     }, [])
+    console.log(news);
     return (
         <div>
             <NavbarUnauto />
