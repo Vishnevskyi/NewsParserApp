@@ -28,7 +28,7 @@ const DeleteForm = () => {
         }
         //--------------------------------
         //Отправка формы в бд на выборку
-        fetch("https://obscure-taiga-00490.herokuapp.com:4123/api/deleteNews", {
+        fetch("https://obscure-taiga-00490.herokuapp.com:4123/deleteNews", {
             method: "POST",
             mode: "cors",
             body: formData,
