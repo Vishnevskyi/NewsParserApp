@@ -68,7 +68,7 @@ const Main = () => {
         weekday: 'long',
     };
     useEffect(() => {
-        fetch("damp-tundra-84467.herokuapp.com/api/news", {
+        fetch("damp-tundra-84467.herokuapp.com/news", {
             method: "POST",
             mode: "cors"
         })
@@ -78,7 +78,7 @@ const Main = () => {
     }, [])
     const [article, setArticle] = useState([]);
     useEffect(() => {
-        fetch("damp-tundra-84467.herokuapp.com/api/article", {
+        fetch("damp-tundra-84467.herokuapp.com/article", {
             method: "POST",
             mode: "cors"
         })
@@ -88,7 +88,7 @@ const Main = () => {
     }, [])
     const [later, setLater] = useState([]);
     useEffect(() => {
-        fetch("damp-tundra-84467.herokuapp.com/api/later", {
+        fetch("damp-tundra-84467.herokuapp.com/later", {
             method: "POST",
             mode: "cors"
         })
