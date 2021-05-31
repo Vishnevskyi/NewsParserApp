@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import loginPage from "./login/login-page/login-page";
 import MainPage from "./main/main"
 import adminAuth from "./admin/adminAuth"
+import adminPage from "./admin/adminPage"
 import { BrowserRouter,Route, Switch } from "react-router-dom";
 import Article from "./article/article";
 import NotFound from "./Page404/Page404"
@@ -40,6 +41,7 @@ function App() {
                 ))}
                 <Route exact path="/about" component={aboutPage} />
                 <Route exact path="/auth" component={adminAuth} />
+                <Route exact path="/mypage" component={adminPage} />
                 <Route exact path="/login" component={loginPage} />
                 <Route component={NotFound} />
             </Switch>
