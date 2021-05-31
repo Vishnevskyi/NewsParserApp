@@ -57,7 +57,7 @@ const AddForm = () => {
         }
         //--------------------------------
         //Отправка формы в бд на выборку
-        fetch("https://gentle-refuge-28661.herokuapp.com:4123/api/addNews", {
+        fetch("https://polar-castle-45110.herokuapp.com/addNews", {
             method: "POST",
             mode: "cors",
             body: formData,

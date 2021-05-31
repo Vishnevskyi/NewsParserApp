@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import adminPage from "./admin/adminPage";
 import loginPage from "./login/login-page/login-page";
 import MainPage from "./main/main"
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import adminAuth from "./admin/adminAuth"
+import { BrowserRouter,Route, Switch } from "react-router-dom";
 import Article from "./article/article";
 import NotFound from "./Page404/Page404"
 import Correspondence from "./correspondence/correspondence"
@@ -10,7 +10,7 @@ import aboutPage from "./about/about"
 function App() {
     const [article, setArticle] = useState([]);
     useEffect(() => {
-        fetch("https://gentle-refuge-28661.herokuapp.com:4123/api/article", {
+        fetch("https://polar-castle-45110.herokuapp.com/article", {
             method: "POST",
             mode: "cors"
         })
@@ -20,7 +20,7 @@ function App() {
     }, [])
     const [news, setNews] = useState([]);
     useEffect(() => {
-        fetch("https://gentle-refuge-28661.herokuapp.com:4123/api/news", {
+        fetch("https://polar-castle-45110.herokuapp.com/news", {
             method: "POST",
             mode: "cors"
         })
@@ -28,8 +28,8 @@ function App() {
             .then((res) => setNews(res))
             .catch((err) => setNews(err))
     }, [])
-    return (
-        <BrowserRouter>
+        return (
+            <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={MainPage} />
                 {article.map((res) => (
@@ -38,13 +38,13 @@ function App() {
                 {news.map((res) => (
                     <Route exact path={`/read/${res.id}`} component={() => <Correspondence newsData={res} />} />
                 ))}
-                <Route exact path="/about" component={aboutPage}/>
-                <Route exact path="/auth" component={loginPage} />
-                <Route exact path="/mypage" component={adminPage} />
-                <Route  component={NotFound}/>
+                <Route exact path="/about" component={aboutPage} />
+                <Route exact path="/auth" component={adminAuth} />
+                <Route exact path="/login" component={loginPage} />
+                <Route component={NotFound} />
             </Switch>
         </BrowserRouter>
-    );
+        )
 }
 
 export default App;

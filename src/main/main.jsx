@@ -67,7 +67,7 @@ const Main = () => {
         weekday: 'long',
     };
     useEffect(() => {
-        fetch("https://gentle-refuge-28661.herokuapp.com:4123/api/news", {
+        fetch("https://polar-castle-45110.herokuapp.com/news", {
             method: "POST",
             mode: "cors"
         })
@@ -80,7 +80,7 @@ const Main = () => {
     }, [])
     const [article, setArticle] = useState([]);
     useEffect(() => {
-        fetch("https://gentle-refuge-28661.herokuapp.com:4123/api/article", {
+        fetch("https://polar-castle-45110.herokuapp.com/article", {
             method: "POST",
             mode: "cors"
         })
@@ -90,7 +90,7 @@ const Main = () => {
     }, [])
     const [later, setLater] = useState([]);
     useEffect(() => {
-        fetch("https://gentle-refuge-28661.herokuapp.com:4123/api/later", {
+        fetch("https://polar-castle-45110.herokuapp.com/later", {
             method: "POST",
             mode: "cors"
         })

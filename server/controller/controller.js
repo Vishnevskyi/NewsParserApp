@@ -49,7 +49,7 @@ exports.login = (req, res) => {
                     (err, token) => {
                         if (err) throw new Error(err);
                         res.cookie("auth", `${token}`, { httpOnly: true });
-                        res.redirect("http://localhost:3000/");// БЕЗ ЭТОГО КУКА НЕ ОТПРАВЛЯЕТСЯ
+                        res.redirect("http://localhost:3000/auth");// БЕЗ ЭТОГО КУКА НЕ ОТПРАВЛЯЕТСЯ
                     });
 
             } else {
