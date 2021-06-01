@@ -42,7 +42,7 @@ let getContent = async (url) => {
         })
     })
     }
-let start = () =>{
+let getNews = () =>{
     axios.get("https://volynonline.com/")
     .then(res => {
         getData(res.data);
@@ -101,7 +101,7 @@ let getArticle = async() => {
         })
 }
 let job = new CronJob('*/1 * * * *', async() => {
-    await start();
+    await getNews();
     await getArticle();
 }, null, true, 'America/Los_Angeles');
 module.exports = {
