@@ -30,7 +30,7 @@ const UpdateForm = () => {
         }
         //--------------------------------
         //Отправка формы в бд на выборку
-        fetch("https://polar-castle-45110.herokuapp.com/uppdate", {
+        fetch("http://localhost:4000/api/uppdate", {
             method: "POST",
             mode: "cors",
             body: formData,

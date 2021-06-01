@@ -85,7 +85,7 @@ const HeaderEach = () =>{
                   <Link className={classes.headerLink} to="/about">About Us</Link>
                 </li>
                 <li>
-                <Link className={classes.headerLink} to="/login">SignIn</Link>
+                <Link className={classes.headerLink} to="/mypage">Admin</Link>
                 </li>
               </ul>
               </nav>

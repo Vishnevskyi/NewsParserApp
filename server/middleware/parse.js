@@ -12,7 +12,7 @@ let getData = (html) => {
     const $ = cheerio.load(html);
     let blocks = $(".hot-news-container");
     blocks.each(async(i, val) => {
-        if (new Date().toLocaleString("ukr", options).replace('р.', '').replace(/,/g, '').toLowerCase().trim() === $(val).find('p').text().replace(/,/g, '').toLowerCase().trim()) {
+        if (new Date().toLocaleString("ukr", options).replace('р.', '').replace(/,/g, '').replace(/0/g,'').toLowerCase().trim() === $(val).find('p').text().replace(/,/g, '').replace(/0/g,'').toLowerCase().trim()) {
             if ($(val).find('.img-container').find('img').attr('src') === undefined || $(val).find('.img-container').find('a').attr('href') === undefined || $(val).find('.text-container').find('h3').text() === '') {
 
             }

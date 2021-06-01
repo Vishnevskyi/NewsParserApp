@@ -12,7 +12,7 @@ const Select = () => {
         for (let key in data) {
             formData.append(key, data[key]);
         }
-        fetch("https://polar-castle-45110.herokuapp.com/select", {
+        fetch("http://localhost:4000/api/select", {
             body: formData,
             mode: "cors",
             method: "POST"
@@ -38,7 +38,7 @@ const Select = () => {
                         value={select}
                     />
                 </div>
-                {message.length === 0 ? '' : message.message === 'Пусті дані' ? <h3>0 - результатів пошуку</h3> : <div><h3>{message.length} результатів пошуку</h3>{message.map((res)=>(<a href={`/read/${res.id}`}>{res.title}<br/></a>))}</div>}
+                {message.length === 0 ? '' : message.message === 'Пусті дані' ? <h3>0 - результатів пошуку</h3> : <div><h3>{message.length} результатів пошуку</h3>{message.map((res)=>(<a href={`/article/${res.id}`}>{res.title}<br/></a>))}</div>}
                 <Button
                     type="submit"
                     color="secondary"

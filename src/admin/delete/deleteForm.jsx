@@ -28,7 +28,7 @@ const DeleteForm = () => {
         }
         //--------------------------------
         //Отправка формы в бд на выборку
-        fetch("https://polar-castle-45110.herokuapp.com/deleteNews", {
+        fetch("http://localhost:4000/api/deleteNews", {
             method: "POST",
             mode: "cors",
             body: formData,

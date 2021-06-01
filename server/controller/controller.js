@@ -49,7 +49,7 @@ exports.login = (req, res) => {
                     (err, token) => {
                         if (err) throw new Error(err);
                         res.cookie("auth", `${token}`, { httpOnly: true });
-                        res.redirect("http://localhost:3000/auth");// БЕЗ ЭТОГО КУКА НЕ ОТПРАВЛЯЕТСЯ
+                        res.redirect("http://localhost:3000/");// БЕЗ ЭТОГО КУКА НЕ ОТПРАВЛЯЕТСЯ
                     });
 
             } else {
@@ -85,7 +85,7 @@ exports.getNews = (req, res) => {
 }
 //getLaterNews
 exports.getLater = (req, res) => {
-    db.connection.query("SELECT * FROM correspondence WHERE date <= NOW() - INTERVAL 1 DAY ORDER BY date DESC", (err, result) => {
+    db.connection.query("SELECT * FROM correspondence WHERE date < CURRENT_DATE ORDER BY id DESC", (err, result) => {
         if (err) res.status(500).json({
             message: "Помилка"
         })
@@ -96,7 +96,7 @@ exports.getLater = (req, res) => {
 }
 //Articles
 exports.getArticles = (req, res) => {
-    let sql = "SELECT * FROM articles ORDER BY date DESC";
+    let sql = "SELECT * FROM articles ORDER BY id DESC";
     db.connection.query(sql, (err, result) => {
         if (err) res.status(500).json({
             message: "Помилка"
@@ -120,7 +120,7 @@ exports.getAside = (req, res) => {
 }
 //AddNews
 exports.insertNews = (req, res) => {
-    let { title, content, href, option } = req.body;
+    let { title, content, href, option} = req.body;
     const today = new Date().toISOString().slice(0, 10);
     if (title === '' || content === '' || option === 'undefined' || req.file.path === 'undefined') {
         if (option === 'aside') {
@@ -211,7 +211,7 @@ exports.select = (req, res) => {
         })
     }
     else {
-        db.connection.query(`SELECT * FROM correspondence WHERE title LIKE '%${select}%'`, (err, result) => {
+        db.connection.query(`SELECT * FROM articles WHERE title LIKE '%${select}%'`, (err, result) => {
             if (err) res.status(500).json({
                 message: "Помилка"
             })

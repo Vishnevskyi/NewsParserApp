@@ -57,7 +57,7 @@ export default function SignIn() {
                 <Typography component="h1" variant="h5">
                     Вхід
                 </Typography>
-                <form className={classes.form} noValidate method="POST" action="https://polar-castle-45110.herokuapp.com/login">
+                <form className={classes.form} noValidate method="POST" action="http://localhost:4000/api/login">
                     <TextField
                         variant="outlined"
                         margin="normal"

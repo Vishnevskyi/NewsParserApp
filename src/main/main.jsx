@@ -67,7 +67,7 @@ const Main = () => {
         weekday: 'long',
     };
     useEffect(() => {
-        fetch("https://polar-castle-45110.herokuapp.com/news", {
+        fetch("http://localhost:4000/api/news", {
             method: "POST",
             mode: "cors"
         })
@@ -80,7 +80,7 @@ const Main = () => {
     }, [])
     const [article, setArticle] = useState([]);
     useEffect(() => {
-        fetch("https://polar-castle-45110.herokuapp.com/article", {
+        fetch("http://localhost:4000/api/article", {
             method: "POST",
             mode: "cors"
         })
@@ -90,7 +90,7 @@ const Main = () => {
     }, [])
     const [later, setLater] = useState([]);
     useEffect(() => {
-        fetch("https://polar-castle-45110.herokuapp.com/later", {
+        fetch("http://localhost:4000/api/later", {
             method: "POST",
             mode: "cors"
         })
@@ -98,7 +98,6 @@ const Main = () => {
             .then((res) => setLater(res))
             .catch((err) => setLater(err))
     }, [])
-    console.log(news);
     return (
         <div>
             <NavbarUnauto />
